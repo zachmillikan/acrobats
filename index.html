@@ -19,9 +19,9 @@
           $scope.acrobats.push($scope.acrobat);
           $scope.acrobat = {};
         }
-        $scope.removeLastAcrobat = function() {
-          $scope.acrobats.pop();
-        }
+        // $scope.removeLastAcrobat = function() {
+        //   $scope.acrobats.pop();
+        // }
         $scope.editAcrobat = function (acrobat) {
           $scope.editing = true;
           $scope.acrobat = acrobat;
@@ -42,7 +42,6 @@
       <input type="text" ng-model="acrobat.name"placeholder="Whats your name?">
       <input type="text" ng-model="acrobat.act" placeholder="whats your act?">
       <button type="submit">Sign Me Up</button>
-      <a href="#" ng-click="removeLastAcrobat()">Remove Last Acrobat</a>
     </form>
 
     <form ng-submit="updateAcrobat()" ng-show="editing">
@@ -57,7 +56,7 @@
           <li ng-repeat="acrobat in acrobats track by $index">
             The Fabulous {{ acrobat.name }}: Master of {{acrobat.act}}
             <a href="#" ng-click="editAcrobat(acrobat)">(edit)</a>
-            <a href="#" ng-click="removeAcrobat($acrobat)">(remove Acrobat)</a>
+            <a href="#" ng-click="removeAcrobat($acrobat)">(remove)</a>
           </li>
         </ul>
     </div>
